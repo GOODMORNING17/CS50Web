@@ -1,0 +1,124 @@
+{% extends "orders/base.html" %}
+{% block title %}
+homade best pastry in Singapore
+{% endblock %}
+{% block body %}
+<div class="bg-img">
+    <img src="static/auctions/logo-modified.png" style="position: relative; height: 100px; width: 100px; top: 10px; left: 60px;"></img>
+    <ul style="float:right; top: 40px; left: -600px; position: relative;"class="nav">
+    <li class="nav-item">
+      <a style="color:#373b4d; font-weight: 1000;" class="nav-link" href="{% url 'orders:index' %}">HOME</a>
+    </li>
+      <li class="nav-item">
+          <a style="color:#373b4d; font-weight: 1000;"  class="nav-link" href="{% url 'orders:order' %}">ORDER HERE </a>
+      </li>
+      <li class="nav-item">
+          <a style="color:#373b4d; font-weight: 1000;"  class="nav-link" href="{% url 'orders:faq' %}">FAQS</a>
+      </li>
+      <li class="nav-item">
+          <a style="color:#373b4d; font-weight: 1000;"  class="nav-link" href="{% url 'orders:about' %}">ABOUT</a>
+      </li>
+      <li class="nav-item">
+          <a style="color:#373b4d; font-weight: 1000;"  class="nav-link" href="{% url 'orders:contact' %}">CONTACT</a>
+      </li>
+    </ul>
+    <ul style="float:right; top: 40px; left: 300px; position: relative;"class="nav">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+          <a style="color:#373b4d; font-weight: 1000;" class="nav-link" href="{% url 'users:logout' %}">Log Out</a>
+      </li>
+      <a style="color:#373b4d; font-weight: 1000;" class="nav-link" href="{% url 'orders:orders' %}">My orders</a>
+      {% else %}
+      <li class="nav-item">
+          <a style="color:#373b4d; font-weight: 1000;" class="nav-link" href="{% url 'users:login' %}">Log In</a>
+      </li>
+      <li class="nav-item">
+          <a style="color:#373b4d; font-weight: 1000;" class="nav-link" href="{% url 'users:register' %}">Register</a>
+      </li>                
+    {% endif %}
+    </ul>
+    <a href="{% url 'orders:cart' %}"> 
+    <img src ="static/auctions/cart5.png" style="width: 50px; height:50px; top: 10px; position:relative; left: 1000px;"></img>
+    </a>
+</div>
+<style>
+    .bg-img {
+        background-image: url("static/auctions/BBC_COVER.jpg");
+        display:block;
+        background-size:cover; width: 100%; top: -110px; height:720px; position:relative; padding:0; object-position: center; margin-left: 0;
+    }
+</style>
+<center style="font-size:40px; position:relative; top: -650px; color: white; font-family: futura; letter-spacing: 22px;"> HOMEMADE </center>
+<center style="font-size:100px; position:relative; left: 20px; top: -600px; color: white; font-family: futura; letter-spacing: 50px;"> PASTRIES </center>
+<button class="btn btn-primary btn" style="font-weight: 100; font-size: 20px; background-color:#373b4d; width: 150px; height: 50px; position: relative; top: -567px; left: 540px;" onclick="location.href='{% url 'orders:order' %}';">
+    Order Here
+</button>
+<style>
+    .button :hover{
+        background-color: white; 
+    }
+</style>
+
+<div id="container" style="position:relative; top: -50px;">
+<div id="container" style="text-align: center; left: 130px; top: -150px; position: relative; display: inline-block;">
+<img src="static/auctions/bag.png" style="height:70px; width: 70px; position: relative; top: -20px;"></img>
+<h1 style="font-size: 30px; font-weight: 100; "> PICK UP SERVICE </h1>
+<p> Get It Fresh </p>
+</div>
+<div class="vertical">
+    <style>
+        .vertical {
+            border-left: 2px solid black;
+            height: 180px;
+            position: relative;
+            left: 180px;
+            top: -130px;
+            display:inline-block;
+    
+        }
+    </style>
+</div>
+
+<div id="container" style="text-align: center; left: 245px; top: -150px; position:relative; display: inline-block; ">
+<img src="static/auctions/delivery-truck.png" style="height:70px; width: 70px; position: relative; top: -20px;"></img>
+<h1 style="font-size: 27px; font-weight: 100; "> FREE ISLANDWIDE DELIVERY </h1>
+<p> From the oven to your doorstep </p> 
+</div>
+<div class="vl"></div>
+    <style>
+        .vl {
+            border-left: 2px solid black;
+            height: 180px;
+            position: relative;
+            left: 300px;
+            top: -130px;
+            display:inline-block;
+    
+        }
+    </style>
+
+    <div id="container" style="text-align: center; left: 360px; top: -150px; position:relative; display: inline-block; ">
+        <img src="static/auctions/present.png" style="height:70px; width: 70px; position: relative; top: -20px;"></img>
+        <h1 style="font-size: 27px; font-weight: 100; "> PERFECT AS GIFTS </h1>
+        <p> Send a sweet surprise </p> 
+        </div>
+    </div>
+
+<br><br><br><br>
+<footer style="background-color:light-grey; clear:both; position:relative;"><hr style="border-color: black; width: 6% ; border-width:2px; position:relative; top:-80px;">
+    <p style="text-decoration:none; color:black; font-weight: 150; float:right; position:relative; left:-100px; text-align:center; top:-10px;"> © 2022 homade </p>
+    <div style="color:black; float:left; position:relative;display:inline-block; top:-22px; left:75px;" id="container">
+        <img style="width:10px;" src="static/auctions/facebook.png"></img><br>
+        <img style="width:10px;" src="static/auctions/instagram.jpeg"></img><br>
+        <img style="width:10px;" src="static/auctions/youtube.png"></img><br>
+        <img style="width:10px;" src="static/auctions/tiktok.png"></img><br>
+    </div>
+ 
+    <div style="color:black; float:left; position:relative; display: inline-block; top: -20px; left:80px;" id="container">
+    <a style=" text-decoration:none; color:black; font-weight: 150;" href="https://www.facebook.com/homade.sg"> Facebook </a><br>
+    <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.instagram.com/homade.sg/"> Instagram </a><br>
+    <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.youtube.com/channel/UCQn2DCK3LZJgbcDYJxTIa6Q"> Youtube <a><br>    
+    <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.tiktok.com/@homade.sg"> Tiktok <a><br>
+    </div>
+     </footer>
+{% endblock %}

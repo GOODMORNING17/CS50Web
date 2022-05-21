@@ -1,0 +1,32 @@
+{% extends "orders/base.html" %}
+{% load static %}
+{% block title %}
+Order Receipt | homade best pastry in Singapore
+{% endblock %}
+
+
+{% block body %}
+<br><br><br><br>
+<center style="font-size: 30px; font-family: futura;" > ORDER RECEIVED! </center><br><br><br>
+  <center>
+    Your order has been received. You can check the status of your order on <a href="{% url 'orders:orders' %}">my orders</a> page.
+  </center>
+
+  <br><br><br><br><br><br><br><br><br><br>
+  <footer style="background-color:light-grey; height: 50px; clear:both;"><hr style=" border-color: black; width: 6% ; border-width:2px; position:relative; top:-40px;">
+     <p style="text-decoration:none; color:black; font-weight: 150; float:right; position:relative; left:-100px; text-align:center; top:-10px;"> © 2022 homade </p>
+     <div style="color:black; float:left; position:relative;display:inline-block; top:-22px; left:75px;" id="container">
+         <img style="width:10px;" src="static/auctions/facebook.png"></img><br>
+         <img style="width:10px;" src="static/auctions/instagram.jpeg"></img><br>
+         <img style="width:10px;" src="static/auctions/youtube.png"></img><br>
+         <img style="width:10px;" src="static/auctions/tiktok.png"></img><br>
+     </div>
+  
+     <div style="color:black; float:left; position:relative; display: inline-block; top: -20px; left:80px;" id="container">
+     <a style=" text-decoration:none; color:black; font-weight: 150;" href="https://www.facebook.com/homade.sg"> Facebook </a><br>
+     <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.instagram.com/homade.sg/"> Instagram </a><br>
+     <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.youtube.com/channel/UCQn2DCK3LZJgbcDYJxTIa6Q"> Youtube <a><br>    
+     <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.tiktok.com/@homade.sg"> Tiktok <a><br>
+     </div>
+      </footer>
+{% endblock %}

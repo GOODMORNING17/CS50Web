@@ -1,0 +1,67 @@
+{% extends "orders/base.html" %}
+{% block title %}
+Contact | homade best pastry in Singapore
+{% endblock %}
+{% block body %}
+<hr>
+<div style="  padding: 20px;
+background-color: #f44336;
+color: white;
+margin-bottom: 15px;"
+class="alert">
+    <span style="margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;"class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    Failed to send contact! Please ensure that you have filled in all the blanks!!
+  </div>
+
+  <h2 style="font-size: 30px; font-family: futura light; position: relative; top: 150px; left: 80px;">/ HAVE A QUESTION?</h2><br>
+  <p style="font-size: 17px; font-family: palatino linotype; position: relative; top: 170px; left: 80px;">Any feedbacks, enquiries or collaboration opportunities? Please feel free to </p> 
+  <p style="font-size: 17px; font-family: palatino linotype; position: relative; top: 170px; left: 80px;">drop us a text via email or Instagram DMs. Please be assured that our team</p>
+  <p style="font-size: 17px; font-family: palatino linotype; position: relative; top: 170px; left: 80px;">will give you the best and fastest reply!! Have an awesome day!!</p><br>
+  <p style="font-size: 15px; font-family: palatino linotype; position: relative; top: 170px; left: 80px;">Email: goodmorningcooks@gmail.com</p>
+  <p style="font-size: 15px; font-family: palatino linotype; position: relative; top: 170px; left: 80px;">Instagram: @homade.sg </p>
+  {% if message %}
+      <div>{{ message }}</div>
+  {% endif %}
+
+  <form style="float: right; position: relative; top: -210px; left: -100px;"action="{% url 'orders:contact' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+          <label for="id_Name">Name*:</label>
+          <input id="id_Name" style="border-color: #373b4d; border-width: 2px; " class="form-control" autofocus type="text" name="Name" >
+      </div><br>
+      <div class="form-group">
+          <label for="id_email">Email*:</label>
+          <input id="id_email" style="border-color: #373b4d; border-width: 2px;" class="form-control" type="email" name="email" >
+      </div><br>
+      <div class="form-group">
+          <label for="id_Details">Message*:</label>
+          <textarea id="id_Details" style="border-color: #373b4d; border-width: 2px;" class="form-control" cols="40" rows="5" type="Details" name="Details" ></textarea>
+      </div>
+      <input style="background-color:#373b4d; width: 130px; font-color: white;" class="btn btn-primary" type="submit" value="Submit">
+  </form>
+  <footer style="background-color:light-grey; height: 50px; clear:both;"><hr style=" border-color: black; width: 6% ; border-width:2px; position:relative; top:-40px;">
+    <p style="text-decoration:none; color:black; font-weight: 150; float:right; position:relative; left:-100px; text-align:center; top:-10px;"> © 2022 homade </p>
+    <div style="color:black; float:left; position:relative;display:inline-block; top:-22px; left:75px;" id="container">
+        <img style="width:10px;" src="static/auctions/facebook.png"></img><br>
+        <img style="width:10px;" src="static/auctions/instagram.jpeg"></img><br>
+        <img style="width:10px;" src="static/auctions/youtube.png"></img><br>
+        <img style="width:10px;" src="static/auctions/tiktok.png"></img><br>
+    </div>
+
+    <div style="color:black; float:left; position:relative; display: inline-block; top: -20px; left:80px;" id="container">
+    <a style=" text-decoration:none; color:black; font-weight: 150;" href="https://www.facebook.com/homade.sg"> Facebook </a><br>
+    <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.instagram.com/homade.sg/"> Instagram </a><br>
+    <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.youtube.com/channel/UCQn2DCK3LZJgbcDYJxTIa6Q"> Youtube <a><br>    
+    <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.tiktok.com/@homade.sg"> Tiktok <a><br>
+    </div>
+     </footer>
+     
+
+{% endblock %}

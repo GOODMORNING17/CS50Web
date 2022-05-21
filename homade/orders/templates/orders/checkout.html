@@ -1,0 +1,58 @@
+{% extends "orders/base.html" %}
+{% load static %}
+{% block title %}
+Checkout | homade best pastry in Singapore
+{% endblock %}
+
+{% block body %}
+<br><br><br><br>
+<center style="font-size: 30px; font-family: futura-light;" > / CHECKOUT </center><br><br><br>
+<div class="container bg-white py-3 my-3 border rounded" style=" width:600px; height:700px; left:100px;position:relative;display: inline-block;" >
+  <div class="row">
+    <div class="col">
+      <h5 style=" font-family: futura; color: #373b4d;">Customer information</h5>
+    </div>
+  </div>
+  <form style=" width: 450px; height: 400px; top:20px;position:relative; display="inline-block;" action="{% url 'orders:checkoutinfo' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_Name">Name*:</label>
+        <input id="id_Name" style=" border-width: 2px; " class="form-control" autofocus type="text" name="Name" >
+    </div><br>
+    <div class="form-group">
+        <label for="id_email">Email*:</label>
+        <input id="id_email" style=" border-width: 2px;" class="form-control" type="email" name="email" >
+    </div><br>
+    <div class="form-group">
+        <label for="id_Phone">Phone*:</label>
+        <input id="id_Phone" style=" border-width: 2px;" class="form-control" type="Phone" name="Phone" >
+    </div>
+    <div class="form-group">
+      <label for="id_Address">Address*:</label>
+      <input id="id_Address" style=" border-width: 2px;" class="form-control" type="Address" name="Address" >
+  </div>
+<div class="form-group">
+  <label for="id_Postal">Postal Code*:</label>
+  <input id="id_Postal" style="border-width: 2px;" class="form-control" type="Postal" name="Postal" >
+</div>
+<input style="background-color:#373b4d; width: 200px; position:relative; top: 20px; font-color: white;" class="btn btn-primary" href="orders/payment.html"type="submit" value="Continue">
+</form>
+
+<br><br><br>
+<footer style="background-color:light-grey; height: 50px; position:relative; top: 400px; left: 200px; clear:both;"><hr style=" border-color: black; width: 6% ; border-width:2px; position:relative; top:-70px;">
+   <p style="text-decoration:none; color:black; font-weight: 150; float:right; position:relative; left:200px; text-align:center; top:-10px;"> © 2022 homade </p>
+   <div style="color:black; float:left; position:relative;display:inline-block; top:-22px; left:-200px;" id="container">
+       <img style="width:10px;" src="static/auctions/facebook.png"></img><br>
+       <img style="width:10px;" src="static/auctions/instagram.jpeg"></img><br>
+       <img style="width:10px;" src="static/auctions/youtube.png"></img><br>
+       <img style="width:10px;" src="static/auctions/tiktok.png"></img><br>
+   </div>
+
+   <div style="color:black; float:left; position:relative; display: inline-block; top: -20px; left:-195px;" id="container">
+   <a style=" text-decoration:none; color:black; font-weight: 150;" href="https://www.facebook.com/homade.sg"> Facebook </a><br>
+   <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.instagram.com/homade.sg/"> Instagram </a><br>
+   <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.youtube.com/channel/UCQn2DCK3LZJgbcDYJxTIa6Q"> Youtube <a><br>    
+   <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.tiktok.com/@homade.sg"> Tiktok <a><br>
+   </div>
+    </footer>
+{% endblock %}

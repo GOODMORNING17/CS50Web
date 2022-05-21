@@ -1,0 +1,59 @@
+{% extends "orders/base.html" %}
+{% load static %}
+{% block title %}
+Cart | homade best pastry in Singapore
+{% endblock %}
+
+{% block body %}
+<script src="{% static 'js/cart.js' %}"></script>
+<br><br><br><br>
+<center style="font-size: 30px; font-family: futura-light;" > / CART </center><br><br><br>
+<div class="container bg-grey py-3 my-3 borderless" style="font-family: montserra; border:none;">
+  <form id="cart" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="remove_item" value="">
+    <style>
+      .remove-button{
+        background-color: transparent;
+        width:100px;
+        border:none;
+        color: black;
+        position: relative;
+        left: 30px;
+        top: -5px;
+      }
+    </style>
+    {% include "orders/includes/cart-items.html" %}
+    {% if cart_items %}
+    <div class="row mt-1">
+      <div class="col-sm-5 h3 text-right" style ="font-family: montserra; float:right;position:relative; left: 550px;">
+        Total: ${{ cart_cost.price__sum|floatformat:2 }}
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-sm-5 text-right" style="top:15px;left:580px;position:relative;">
+        <a href="{% url 'orders:checkout' %}" style="background-color: #373b4d; width: 200px;" class="btn btn-primary">Checkout</a>
+      </div>
+    </div>
+    {% endif %}
+  </form>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br>
+<footer style="background-color:light-grey; height: 50px; clear:both;"><hr style=" border-color: black; width: 6% ; border-width:2px; position:relative; top:-40px;">
+   <p style="text-decoration:none; color:black; font-weight: 150; float:right; position:relative; left:-100px; text-align:center; top:-10px;"> © 2022 homade </p>
+   <div style="color:black; float:left; position:relative;display:inline-block; top:-22px; left:75px;" id="container">
+       <img style="width:10px;" src="static/auctions/facebook.png"></img><br>
+       <img style="width:10px;" src="static/auctions/instagram.jpeg"></img><br>
+       <img style="width:10px;" src="static/auctions/youtube.png"></img><br>
+       <img style="width:10px;" src="static/auctions/tiktok.png"></img><br>
+   </div>
+
+   <div style="color:black; float:left; position:relative; display: inline-block; top: -20px; left:80px;" id="container">
+   <a style=" text-decoration:none; color:black; font-weight: 150;" href="https://www.facebook.com/homade.sg"> Facebook </a><br>
+   <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.instagram.com/homade.sg/"> Instagram </a><br>
+   <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.youtube.com/channel/UCQn2DCK3LZJgbcDYJxTIa6Q"> Youtube <a><br>    
+   <a style="text-decoration:none; color:black; font-weight: 150;" href="https://www.tiktok.com/@homade.sg"> Tiktok <a><br>
+   </div>
+    </footer>
+{% endblock %}
