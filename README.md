@@ -1,8 +1,5 @@
-# Capstone
+My project is a online pastry store website. My web application has utilized Django on the back-end and Javascript on the front-end.
 
-## Distinctiveness and Complexity:
-
-I believe that my project has satisfied the distinctiveness and complexity requirements as my project is totally different from the other projects in this course. My project is a online pastry store website. It is also more complex as it has a contact form which is not being used in the other projects. My contact form allows for visitors to input their information so that I can receive their contact information for future collaboration and business operations. Moreover, my web application has utilized Django on the back-end and Javascript on the front-end. Moreover, my web application is also mobile-responsive
 
 ## Models
 
